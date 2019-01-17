@@ -1,0 +1,10 @@
+{
+  "name": "cohortesds",
+  "connector": "mysql",
+  "url": "mysql://alejandroescobar:b4tm4n2.1@172.19.0.196/cohortes",
+  "host": "172.19.0.196",
+  "port": 3306,
+  "user": "alejandroescobar",
+  "password": "b4tm4n2.1",
+  "database": "cohortes"
+}

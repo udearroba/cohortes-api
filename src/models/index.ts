@@ -1,0 +1,1 @@
+export * from './recurrencia.model';
