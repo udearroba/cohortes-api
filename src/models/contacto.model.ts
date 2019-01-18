@@ -1,9 +1,10 @@
 import { Entity, model, property, hasMany } from '@loopback/repository';
 
+import { Cohorte } from './cohorte.model';
 import { Horariocurso } from './horariocurso.model';
 
 @model({ settings: { "strict": false } })
-export class Recurrencia extends Entity {
+export class Contacto extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -15,16 +16,36 @@ export class Recurrencia extends Entity {
     type: 'string',
     required: true,
   })
+  email1: string;
+
+  @property({
+    type: 'string',
+  })
+  email2?: string;
+
+  @property({
+    type: 'string',
+    required: true,
+  })
   nombre: string;
 
+  @property({
+    type: 'string',
+  })
+  telefono?: string;
+
   // Define well-known properties here
-  @hasMany(() => Horariocurso)
+  @hasMany(() => Cohorte, { keyTo: 'coordinadoracademicoId' })
+  cohortes?: Cohorte[];
+
+  @hasMany(() => Horariocurso, { keyTo: 'profesor1Id' })
   horariocursos?: Horariocurso[];
+
 
   // Indexer property to allow additional data
   [prop: string]: any;
 
-  constructor(data?: Partial<Recurrencia>) {
+  constructor(data?: Partial<Contacto>) {
     super(data);
   }
 }
