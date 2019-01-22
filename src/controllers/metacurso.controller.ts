@@ -16,20 +16,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Metacurso} from '../models';
-import {MetacursoRepository} from '../repositories';
+import { Metacurso, Materia, Cursocohorte, Cohorte } from '../models';
+import { MetacursoRepository } from '../repositories';
 
 export class MetacursoController {
   constructor(
     @repository(MetacursoRepository)
-    public metacursoRepository : MetacursoRepository,
-  ) {}
+    public metacursoRepository: MetacursoRepository,
+  ) { }
 
   @post('/metacursos', {
     responses: {
       '200': {
         description: 'Metacurso model instance',
-        content: {'application/json': {schema: {'x-ts-type': Metacurso}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Metacurso } } },
       },
     },
   })
@@ -41,7 +41,7 @@ export class MetacursoController {
     responses: {
       '200': {
         description: 'Metacurso model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -57,7 +57,7 @@ export class MetacursoController {
         description: 'Array of Metacurso model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: {'x-ts-type': Metacurso}},
+            schema: { type: 'array', items: { 'x-ts-type': Metacurso } },
           },
         },
       },
@@ -73,7 +73,7 @@ export class MetacursoController {
     responses: {
       '200': {
         description: 'Metacurso PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -88,7 +88,7 @@ export class MetacursoController {
     responses: {
       '200': {
         description: 'Metacurso model instance',
-        content: {'application/json': {schema: {'x-ts-type': Metacurso}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Metacurso } } },
       },
     },
   })
@@ -133,5 +133,26 @@ export class MetacursoController {
   })
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.metacursoRepository.deleteById(id);
+  }
+
+  @get('/metacursos/{id}/materia')
+  async getMateria(
+    @param.path.number('id') metacursoId: typeof Metacurso.prototype.id,
+  ): Promise<Materia> {
+    return await this.metacursoRepository.materia(metacursoId);
+  }
+
+  @get('/metacursos/{id}/cohorte')
+  async getCohorte(
+    @param.path.number('id') metacursoId: typeof Metacurso.prototype.id,
+  ): Promise<Cohorte> {
+    return await this.metacursoRepository.cohorte(metacursoId);
+  }
+
+  @get('/metacursos/{id}/cursocohorte')
+  async getCursocohorte(
+    @param.path.number('id') metacursoId: typeof Metacurso.prototype.id,
+  ): Promise<Cursocohorte> {
+    return await this.metacursoRepository.cursocohorte(metacursoId);
   }
 }
