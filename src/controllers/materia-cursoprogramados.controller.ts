@@ -1,6 +1,6 @@
 import { post, param, requestBody } from '@loopback/rest';
 import { MateriaRepository } from '../repositories/';
-import { Materia, Metacurso } from '../models/';
+import { Materia, Cursoprogramado } from '../models/';
 import { repository } from '@loopback/repository';
 
 export class MateriaMetacursosController {
@@ -9,11 +9,11 @@ export class MateriaMetacursosController {
     protected materiaRepository: MateriaRepository,
   ) { }
 
-  @post('/materia/{id}/metacurso')
-  async createMetacurso(
+  @post('/materia/{id}/cursoprogramado')
+  async createCursoprogramado(
     @param.path.number('id') materiaId: typeof Materia.prototype.id,
-    @requestBody() metacursoData: Metacurso,
-  ): Promise<Metacurso> {
-    return await this.materiaRepository.metacursos(materiaId).create(metacursoData);
+    @requestBody() cursoprogramadoData: Cursoprogramado,
+  ): Promise<Cursoprogramado> {
+    return await this.materiaRepository.cursoprogramados(materiaId).create(cursoprogramadoData);
   }
 }
