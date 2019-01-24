@@ -7,3 +7,4 @@ export * from './cursocohorte.model';
 export * from './horariocurso.model';
 export * from './reunionvideoconferencia.model';
 export * from './cohorte.model';
+export * from './cursoprogramado.model';

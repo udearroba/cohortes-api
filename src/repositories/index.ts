@@ -7,3 +7,4 @@ export * from './cursocohorte.repository';
 export * from './horariocurso.repository';
 export * from './reunionvideoconferencia.repository';
 export * from './cohorte.repository';
+export * from './cursoprogramado.repository';

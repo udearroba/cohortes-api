@@ -1,5 +1,5 @@
 import { Entity, model, property, hasMany } from '@loopback/repository';
-import { Metacurso } from './metacurso.model';
+import { Cursoprogramado } from './cursoprogramado.model';
 
 @model({ settings: { "strict": false } })
 export class Materia extends Entity {
@@ -23,8 +23,8 @@ export class Materia extends Entity {
   nombre: string;
 
   // Define well-known properties here
-  @hasMany(() => Metacurso)
-  metacursos?: Metacurso[];
+  @hasMany(() => Cursoprogramado)
+  cursoprogramados?: Cursoprogramado[];
 
   // Indexer property to allow additional data
   [prop: string]: any;

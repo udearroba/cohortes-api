@@ -1,36 +1,46 @@
 import { DefaultCrudRepository, juggler, HasManyRepositoryFactory, repository } from '@loopback/repository';
-import { Cohorte, Metacurso, Cursocohorte } from '../models';
+import { Cohorte, Cursoprogramado, Cursocohorte, Horariocurso } from '../models';
 import { CohortesdsDataSource } from '../datasources';
-import { MetacursoRepository, CursocohorteRepository } from '../repositories';
+import { CursoprogramadoRepository, CursocohorteRepository, HorariocursoRepository } from '../repositories';
 import { inject, Getter } from '@loopback/core';
 
 export class CohorteRepository extends DefaultCrudRepository<
   Cohorte,
   typeof Cohorte.prototype.id
   > {
-  public readonly metacursos: HasManyRepositoryFactory<
-    Metacurso,
+  public readonly cursoprogramados: HasManyRepositoryFactory<
+    Cursoprogramado,
     typeof Cohorte.prototype.id
   >;
   public readonly cursocohortes: HasManyRepositoryFactory<
     Cursocohorte,
     typeof Cohorte.prototype.id
   >;
+  public readonly horariocursos: HasManyRepositoryFactory<
+    Horariocurso,
+    typeof Cohorte.prototype.id
+  >;
   constructor(
     @inject('datasources.cohortesds') dataSource: CohortesdsDataSource,
-    @repository.getter('MetacursoRepository')
-    getMetacursoRepository: Getter<MetacursoRepository>,
+    @repository.getter('CursoprogramadoRepository')
+    getCursoprogramadoRepository: Getter<CursoprogramadoRepository>,
     @repository.getter('CursocohorteRepository')
     getCursocohorteRepository: Getter<CursocohorteRepository>,
+    @repository.getter('HorariocursoRepository')
+    getHorariocursoRepository: Getter<HorariocursoRepository>,
   ) {
     super(Cohorte, dataSource);
-    this.metacursos = this.createHasManyRepositoryFactoryFor(
-      'metacursos',
-      getMetacursoRepository,
+    this.cursoprogramados = this.createHasManyRepositoryFactoryFor(
+      'cursoprogramados',
+      getCursoprogramadoRepository,
     );
     this.cursocohortes = this.createHasManyRepositoryFactoryFor(
       'cursocohortes',
       getCursocohorteRepository,
+    );
+    this.horariocursos = this.createHasManyRepositoryFactoryFor(
+      'horariocursos',
+      getHorariocursoRepository,
     );
   }
 }

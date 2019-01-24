@@ -1,7 +1,6 @@
 import { Entity, model, property, belongsTo } from '@loopback/repository';
-import { Materia } from './materia.model';
-import { Cohorte } from './cohorte.model';
 import { Cursocohorte } from './cursocohorte.model';
+import { Cursoprogramado } from './cursoprogramado.model';
 
 @model({ settings: { "strict": false } })
 export class Metacurso extends Entity {
@@ -22,11 +21,8 @@ export class Metacurso extends Entity {
 
   // Define well-known properties here
 
-  @belongsTo(() => Materia)
-  materiaId: number;
-
-  @belongsTo(() => Cohorte)
-  cohorteId: number;
+  @belongsTo(() => Cursoprogramado)
+  cursoprogramadoId: number;
 
   @belongsTo(() => Cursocohorte)
   cursocohorteId: number;

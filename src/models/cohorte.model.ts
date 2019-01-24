@@ -1,6 +1,5 @@
 import { Entity, model, property, hasMany, belongsTo } from '@loopback/repository';
-
-import { Metacurso } from './metacurso.model';
+import { Cursoprogramado } from './cursoprogramado.model';
 import { Cursocohorte } from './cursocohorte.model';
 import { Horariocurso } from './horariocurso.model';
 import { Contacto } from './contacto.model';
@@ -45,8 +44,8 @@ export class Cohorte extends Entity {
   fechafinal: string;
 
   // Define well-known properties here
-  @hasMany(() => Metacurso)
-  metacursos?: Metacurso[];
+  @hasMany(() => Cursoprogramado)
+  cursoprogramados?: Cursoprogramado[];
 
   @hasMany(() => Cursocohorte)
   cursocohortes?: Cursocohorte[];
