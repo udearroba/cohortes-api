@@ -1,7 +1,7 @@
-import { DefaultCrudRepository, juggler, HasManyRepositoryFactory, repository } from '@loopback/repository';
-import { Cohorte, Cursoprogramado, Cursocohorte, Horariocurso } from '../models';
+import { DefaultCrudRepository, juggler, HasManyRepositoryFactory, repository, BelongsToAccessor } from '@loopback/repository';
+import { Cohorte, Cursoprogramado, Cursocohorte, Horariocurso, Contacto } from '../models';
 import { CohortesdsDataSource } from '../datasources';
-import { CursoprogramadoRepository, CursocohorteRepository, HorariocursoRepository } from '../repositories';
+import { CursoprogramadoRepository, CursocohorteRepository, HorariocursoRepository, ContactoRepository } from '../repositories';
 import { inject, Getter } from '@loopback/core';
 
 export class CohorteRepository extends DefaultCrudRepository<
@@ -20,6 +20,10 @@ export class CohorteRepository extends DefaultCrudRepository<
     Horariocurso,
     typeof Cohorte.prototype.id
   >;
+  public readonly contacto: BelongsToAccessor<
+    Contacto,
+    typeof Cohorte.prototype.id
+  >;
   constructor(
     @inject('datasources.cohortesds') dataSource: CohortesdsDataSource,
     @repository.getter('CursoprogramadoRepository')
@@ -28,6 +32,8 @@ export class CohorteRepository extends DefaultCrudRepository<
     getCursocohorteRepository: Getter<CursocohorteRepository>,
     @repository.getter('HorariocursoRepository')
     getHorariocursoRepository: Getter<HorariocursoRepository>,
+    @repository.getter('ContactoRepository')
+    contactoRepositoryGetter: Getter<ContactoRepository>,
   ) {
     super(Cohorte, dataSource);
     this.cursoprogramados = this.createHasManyRepositoryFactoryFor(
@@ -41,6 +47,10 @@ export class CohorteRepository extends DefaultCrudRepository<
     this.horariocursos = this.createHasManyRepositoryFactoryFor(
       'horariocursos',
       getHorariocursoRepository,
+    );
+    this.contacto = this.createBelongsToAccessorFor(
+      'contacto',
+      contactoRepositoryGetter,
     );
   }
 }

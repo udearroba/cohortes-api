@@ -8,3 +8,4 @@ export * from './cursocohorte.controller';
 export * from './horariocurso.controller';
 export * from './reunionvideoconferencia.controller';
 export * from './cohorte.controller';
+export * from './cursoprogramdo.controller';

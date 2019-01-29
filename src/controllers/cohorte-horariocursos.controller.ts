@@ -1,19 +1,19 @@
 import { post, param, requestBody } from '@loopback/rest';
 import { CohorteRepository } from '../repositories/';
-import { Cohorte, Metacurso } from '../models/';
+import { Cohorte, Horariocurso } from '../models/';
 import { repository } from '@loopback/repository';
 
-export class CohorteMetacursosController {
+export class CohorteHorariocursosController {
   constructor(
     @repository(CohorteRepository)
     protected cohorteRepository: CohorteRepository,
   ) { }
 
-  @post('/cohorte/{id}/metacurso')
-  async createMetacurso(
+  @post('/cohorte/{id}/horariocurso')
+  async createHorariocurso(
     @param.path.number('id') cohorteId: typeof Cohorte.prototype.id,
-    @requestBody() metacursoData: Metacurso,
-  ): Promise<Metacurso> {
-    return await this.cohorteRepository.metacursos(cohorteId).create(metacursoData);
+    @requestBody() horariocursoData: Horariocurso,
+  ): Promise<Horariocurso> {
+    return await this.cohorteRepository.horariocursos(cohorteId).create(horariocursoData);
   }
 }
