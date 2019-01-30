@@ -16,7 +16,7 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import { Metacurso, Materia, Cursocohorte, Cohorte } from '../models';
+import { Metacurso, Cursocohorte, Cursoprogramado } from '../models';
 import { MetacursoRepository } from '../repositories';
 
 export class MetacursoController {
@@ -135,18 +135,11 @@ export class MetacursoController {
     await this.metacursoRepository.deleteById(id);
   }
 
-  @get('/metacursos/{id}/materia')
-  async getMateria(
+  @get('/metacursos/{id}/cursoprogramado')
+  async getCursoprogramado(
     @param.path.number('id') metacursoId: typeof Metacurso.prototype.id,
-  ): Promise<Materia> {
-    return await this.metacursoRepository.materia(metacursoId);
-  }
-
-  @get('/metacursos/{id}/cohorte')
-  async getCohorte(
-    @param.path.number('id') metacursoId: typeof Metacurso.prototype.id,
-  ): Promise<Cohorte> {
-    return await this.metacursoRepository.cohorte(metacursoId);
+  ): Promise<Cursoprogramado> {
+    return await this.metacursoRepository.cursoprogramado(metacursoId);
   }
 
   @get('/metacursos/{id}/cursocohorte')

@@ -1,19 +1,15 @@
 import { DefaultCrudRepository, juggler, BelongsToAccessor, repository } from '@loopback/repository';
-import { Metacurso, Materia, Cohorte, Cursocohorte } from '../models';
+import { Metacurso, Cursoprogramado, Cursocohorte } from '../models';
 import { CohortesdsDataSource } from '../datasources';
 import { inject, Getter } from '@loopback/core';
-import { MateriaRepository, CohorteRepository, CursocohorteRepository } from '../repositories';
+import { CursoprogramadoRepository, CohorteRepository, CursocohorteRepository } from '../repositories';
 
 export class MetacursoRepository extends DefaultCrudRepository<
   Metacurso,
   typeof Metacurso.prototype.id
   > {
-  public readonly materia: BelongsToAccessor<
-    Materia,
-    typeof Metacurso.prototype.id
-  >;
-  public readonly cohorte: BelongsToAccessor<
-    Cohorte,
+  public readonly cursoprogramado: BelongsToAccessor<
+    Cursoprogramado,
     typeof Metacurso.prototype.id
   >;
   public readonly cursocohorte: BelongsToAccessor<
@@ -22,21 +18,15 @@ export class MetacursoRepository extends DefaultCrudRepository<
   >;
   constructor(
     @inject('datasources.cohortesds') dataSource: CohortesdsDataSource,
-    @repository.getter('MateriaRepository')
-    materiaRepositoryGetter: Getter<MateriaRepository>,
-    @repository.getter('CohorteRepository')
-    cohorteRepositoryGetter: Getter<CohorteRepository>,
+    @repository.getter('CursoprogramadoRepository')
+    cursoprogramadoRepositoryGetter: Getter<CursoprogramadoRepository>,
     @repository.getter('CursocohorteRepository')
     cursocohorteRepositoryGetter: Getter<CursocohorteRepository>,
   ) {
     super(Metacurso, dataSource);
-    this.materia = this.createBelongsToAccessorFor(
-      'materia',
-      materiaRepositoryGetter,
-    );
-    this.cohorte = this.createBelongsToAccessorFor(
-      'cohorte',
-      cohorteRepositoryGetter,
+    this.cursoprogramado = this.createBelongsToAccessorFor(
+      'cursoprogramado',
+      cursoprogramadoRepositoryGetter,
     );
     this.cursocohorte = this.createBelongsToAccessorFor(
       'cursocohorte',
