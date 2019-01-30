@@ -16,20 +16,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Horariocurso} from '../models';
-import {HorariocursoRepository} from '../repositories';
+import { Horariocurso, Cohorte, Contacto, Recurrencia, Cursocohorte } from '../models';
+import { HorariocursoRepository } from '../repositories';
 
 export class HorariocursoController {
   constructor(
     @repository(HorariocursoRepository)
-    public horariocursoRepository : HorariocursoRepository,
-  ) {}
+    public horariocursoRepository: HorariocursoRepository,
+  ) { }
 
   @post('/horariocursos', {
     responses: {
       '200': {
         description: 'Horariocurso model instance',
-        content: {'application/json': {schema: {'x-ts-type': Horariocurso}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Horariocurso } } },
       },
     },
   })
@@ -41,7 +41,7 @@ export class HorariocursoController {
     responses: {
       '200': {
         description: 'Horariocurso model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -57,7 +57,7 @@ export class HorariocursoController {
         description: 'Array of Horariocurso model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: {'x-ts-type': Horariocurso}},
+            schema: { type: 'array', items: { 'x-ts-type': Horariocurso } },
           },
         },
       },
@@ -73,7 +73,7 @@ export class HorariocursoController {
     responses: {
       '200': {
         description: 'Horariocurso PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -88,7 +88,7 @@ export class HorariocursoController {
     responses: {
       '200': {
         description: 'Horariocurso model instance',
-        content: {'application/json': {schema: {'x-ts-type': Horariocurso}}},
+        content: { 'application/json': { schema: { 'x-ts-type': Horariocurso } } },
       },
     },
   })
@@ -134,4 +134,33 @@ export class HorariocursoController {
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.horariocursoRepository.deleteById(id);
   }
+
+  @get('/horariocursos/{id}/cohorte')
+  async getCohorte(
+    @param.path.number('id') horariocursoId: typeof Horariocurso.prototype.id,
+  ): Promise<Cohorte> {
+    return await this.horariocursoRepository.cohorte(horariocursoId);
+  }
+
+  @get('/horariocursos/{id}/contacto')
+  async getContacto(
+    @param.path.number('id') horariocursoId: typeof Horariocurso.prototype.id,
+  ): Promise<Contacto> {
+    return await this.horariocursoRepository.contacto(horariocursoId);
+  }
+
+  @get('/horariocursos/{id}/recurrencia')
+  async getRecurrencia(
+    @param.path.number('id') horariocursoId: typeof Horariocurso.prototype.id,
+  ): Promise<Recurrencia> {
+    return await this.horariocursoRepository.recurrencia(horariocursoId);
+  }
+
+  @get('/horariocursos/{id}/cursocohorte')
+  async getCursocohorte(
+    @param.path.number('id') horariocursoId: typeof Horariocurso.prototype.id,
+  ): Promise<Cursocohorte> {
+    return await this.horariocursoRepository.cursocohorte(horariocursoId);
+  }
+
 }
