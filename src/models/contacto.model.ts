@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import { Entity, model, property, hasMany } from '@loopback/repository';
+import { Cohorte } from './cohorte.model';
 
 @model()
 export class Contacto extends Entity {
@@ -30,6 +31,9 @@ export class Contacto extends Entity {
     type: 'string',
   })
   telefono?: string;
+
+  @hasMany(() => Cohorte, { keyTo: "coordinadoracademicoId" })
+  cohortes?: Cohorte[];
 
 
   constructor(data?: Partial<Contacto>) {

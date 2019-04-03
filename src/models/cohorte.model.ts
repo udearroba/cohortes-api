@@ -39,6 +39,10 @@ export class Cohorte extends Entity {
   })
   fechafinal: string;
 
+  @property({
+    type: 'number'
+  })
+  coordinadoracademicoId: number;
 
   constructor(data?: Partial<Cohorte>) {
     super(data);
