@@ -1,10 +1,14 @@
 {
   "ids": {
-    "Contacto": 2
+    "Contacto": 2,
+    "Cohorte": 2
   },
   "models": {
     "Contacto": {
       "1": "{\"id\":1,\"email1\":\"example@example.com\",\"nombre\":\"Mr. Example\"}"
+    },
+    "Cohorte": {
+      "1": "{\"id\":1,\"nombre\":\"Cohorte1\",\"codigo\":\"codigo1\",\"descripcion\":\"descripcion1\",\"fechainicio\":\"2019-01-01T00:00:00.000Z\",\"fechafinal\":\"2019-04-01T20:37:18.003Z\"}"
     }
   }
 }
