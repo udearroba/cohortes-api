@@ -1,0 +1,10 @@
+{
+  "ids": {
+    "Contacto": 2
+  },
+  "models": {
+    "Contacto": {
+      "1": "{\"id\":1,\"email1\":\"example@example.com\",\"nombre\":\"Mr. Example\"}"
+    }
+  }
+}
