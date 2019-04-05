@@ -8,3 +8,5 @@ export * from './materia-cursoprogramado.controller';
 export * from './cohorte-cursoprogramado.controller';
 export * from './metacurso.controller';
 export * from './cursoprogramado-metacurso.controller';
+export * from './cursocohorte.controller';
+export * from './cursocohorte-metacurso.controller';

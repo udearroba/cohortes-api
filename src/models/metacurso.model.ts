@@ -14,6 +14,11 @@ export class Metacurso extends Entity {
   })
   cursoprogramadoId: number;
 
+  @property({
+    type: 'number'
+  })
+  cursocohorteId: number;
+
 
   constructor(data?: Partial<Metacurso>) {
     super(data);
