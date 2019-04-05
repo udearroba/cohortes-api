@@ -20,6 +20,11 @@ export class Cursoprogramado extends Entity {
   })
   materiaId: number;
 
+  @property({
+    type: 'number'
+  })
+  cohorteId: number;
+
 
   constructor(data?: Partial<Cursoprogramado>) {
     super(data);
