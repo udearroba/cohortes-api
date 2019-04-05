@@ -18,3 +18,5 @@ export * from './recurrencia.controller';
 export * from './recurrencia-horariocurso.controller';
 export * from './reunionvideoconferencia.controller';
 export * from './reunionvideoconferencia-horariocurso.controller';
+export * from './ocurrencia.controller';
+export * from './reunionvideoconferencia-ocurrencia.controller';

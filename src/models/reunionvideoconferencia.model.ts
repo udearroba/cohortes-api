@@ -1,5 +1,6 @@
-import { Entity, model, property, hasOne } from '@loopback/repository';
+import { Entity, model, property, hasOne, hasMany } from '@loopback/repository';
 import { Horariocurso } from './horariocurso.model';
+import { Ocurrencia } from './ocurrencia.model';
 
 @model()
 export class Reunionvideoconferencia extends Entity {
@@ -53,6 +54,10 @@ export class Reunionvideoconferencia extends Entity {
 
   @hasOne(() => Horariocurso)
   horariocurso?: Horariocurso;
+
+  @hasMany(() => Ocurrencia)
+  ocurrencias?: Ocurrencia[];
+
 
   constructor(data?: Partial<Reunionvideoconferencia>) {
     super(data);
