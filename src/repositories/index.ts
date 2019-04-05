@@ -6,3 +6,4 @@ export * from './metacurso.repository';
 export * from './cursocohorte.repository';
 export * from './horariocurso.repository';
 export * from './recurrencia.repository';
+export * from './reunionvideoconferencia.repository';

@@ -16,3 +16,5 @@ export * from './cursocohorte-horariocurso.controller';
 export * from './contacto-horariocurso.controller';
 export * from './recurrencia.controller';
 export * from './recurrencia-horariocurso.controller';
+export * from './reunionvideoconferencia.controller';
+export * from './reunionvideoconferencia-horariocurso.controller';

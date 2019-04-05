@@ -1,4 +1,5 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, model, property, hasOne } from '@loopback/repository';
+import { Horariocurso } from './horariocurso.model';
 
 @model()
 export class Reunionvideoconferencia extends Entity {
@@ -49,6 +50,9 @@ export class Reunionvideoconferencia extends Entity {
     required: true,
   })
   nombre: string;
+
+  @hasOne(() => Horariocurso)
+  horariocurso?: Horariocurso;
 
   constructor(data?: Partial<Reunionvideoconferencia>) {
     super(data);

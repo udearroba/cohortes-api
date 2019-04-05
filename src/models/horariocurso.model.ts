@@ -1,4 +1,5 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, model, property, belongsTo } from '@loopback/repository';
+import { Reunionvideoconferencia } from './reunionvideoconferencia.model';
 
 @model()
 export class Horariocurso extends Entity {
@@ -75,11 +76,6 @@ export class Horariocurso extends Entity {
   periodo: number;
 
   @property({
-    type: 'boolean',
-  })
-  reunionvideoconferenciaId?: boolean;
-
-  @property({
     type: 'number'
   })
   cursocohorteId: number;
@@ -93,6 +89,9 @@ export class Horariocurso extends Entity {
     type: 'number'
   })
   recurrenciaId: number;
+
+  @belongsTo(() => Reunionvideoconferencia)
+  reunionvideoconferenciaId: number;
 
 
   constructor(data?: Partial<Horariocurso>) {
