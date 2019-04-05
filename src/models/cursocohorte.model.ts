@@ -1,9 +1,8 @@
-import { Entity, model, property, hasMany, belongsTo } from '@loopback/repository';
+import { Entity, model, property, hasMany } from '@loopback/repository';
 import { Metacurso } from './metacurso.model';
-import { Cohorte } from './cohorte.model';
 import { Horariocurso } from './horariocurso.model';
 
-@model({ settings: { "strict": false } })
+@model()
 export class Cursocohorte extends Entity {
   @property({
     type: 'number',
@@ -19,10 +18,10 @@ export class Cursocohorte extends Entity {
   nombre: string;
 
   @property({
-    type: 'number',
+    type: 'boolean',
     required: true,
   })
-  isprogramadoenreuniones: number;
+  isprogramadoenreuniones: boolean;
 
   @property({
     type: 'string',
@@ -34,7 +33,10 @@ export class Cursocohorte extends Entity {
   })
   urllms?: string;
 
-  // Define well-known properties here
+  @property({
+    type: 'number',
+  })
+  cohorteId?: string;
 
   @hasMany(() => Metacurso)
   metacursos?: Metacurso[];
@@ -42,11 +44,6 @@ export class Cursocohorte extends Entity {
   @hasMany(() => Horariocurso)
   horariocursos?: Horariocurso[];
 
-  @belongsTo(() => Cohorte)
-  cohorteId: number;
-
-  // Indexer property to allow additional data
-  [prop: string]: any;
 
   constructor(data?: Partial<Cursocohorte>) {
     super(data);

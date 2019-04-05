@@ -1,8 +1,8 @@
-import { Entity, model, property, belongsTo } from '@loopback/repository';
-
+import { Entity, model, property, hasMany } from '@loopback/repository';
 import { Reunionvideoconferencia } from './reunionvideoconferencia.model';
+import { Grabacion } from './grabacion.model';
 
-@model({ settings: { "strict": false } })
+@model()
 export class Ocurrencia extends Entity {
   @property({
     type: 'number',
@@ -27,7 +27,7 @@ export class Ocurrencia extends Entity {
     type: 'number',
     required: true,
   })
-  duration: number;
+  duracion: number;
 
   @property({
     type: 'string',
@@ -35,14 +35,13 @@ export class Ocurrencia extends Entity {
   })
   status: string;
 
-
-
-  // Define well-known properties here
-  @belongsTo(() => Reunionvideoconferencia)
+  @property({
+    type: 'number',
+  })
   reunionvideoconferenciaId: number;
 
-  // Indexer property to allow additional data
-  [prop: string]: any;
+  @hasMany(() => Grabacion)
+  grabaciones?: Grabacion[];
 
   constructor(data?: Partial<Ocurrencia>) {
     super(data);

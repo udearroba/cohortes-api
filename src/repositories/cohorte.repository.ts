@@ -1,14 +1,16 @@
-import { DefaultCrudRepository, juggler, HasManyRepositoryFactory, repository, BelongsToAccessor } from '@loopback/repository';
-import { Cohorte, Cursoprogramado, Cursocohorte, Horariocurso, Contacto } from '../models';
+import { DefaultCrudRepository, HasManyRepositoryFactory, repository } from '@loopback/repository';
+import { Cohorte, Cursoprogramado, Cursocohorte } from '../models';
 import { CohortesdsDataSource } from '../datasources';
-import { CursoprogramadoRepository, CursocohorteRepository, HorariocursoRepository, ContactoRepository } from '../repositories';
 import { inject, Getter } from '@loopback/core';
+import { CursoprogramadoRepository } from './cursoprogramado.repository';
+import { CursocohorteRepository } from './cursocohorte.repository';
 
 export class CohorteRepository extends DefaultCrudRepository<
   Cohorte,
   typeof Cohorte.prototype.id
   > {
-  public readonly cursoprogramados: HasManyRepositoryFactory<
+
+  public readonly cursosprogramados: HasManyRepositoryFactory<
     Cursoprogramado,
     typeof Cohorte.prototype.id
   >;
@@ -16,41 +18,21 @@ export class CohorteRepository extends DefaultCrudRepository<
     Cursocohorte,
     typeof Cohorte.prototype.id
   >;
-  public readonly horariocursos: HasManyRepositoryFactory<
-    Horariocurso,
-    typeof Cohorte.prototype.id
-  >;
-  public readonly contacto: BelongsToAccessor<
-    Contacto,
-    typeof Cohorte.prototype.id
-  >;
   constructor(
     @inject('datasources.cohortesds') dataSource: CohortesdsDataSource,
-    @repository.getter('CursoprogramadoRepository')
-    getCursoprogramadoRepository: Getter<CursoprogramadoRepository>,
-    @repository.getter('CursocohorteRepository')
-    getCursocohorteRepository: Getter<CursocohorteRepository>,
-    @repository.getter('HorariocursoRepository')
-    getHorariocursoRepository: Getter<HorariocursoRepository>,
-    @repository.getter('ContactoRepository')
-    contactoRepositoryGetter: Getter<ContactoRepository>,
+    @repository.getter(CursoprogramadoRepository)
+    protected cursoprogramadoRepositoryGetter: Getter<CursoprogramadoRepository>,
+    @repository.getter(CursocohorteRepository)
+    protected cursocohorteRepositoryGetter: Getter<CursocohorteRepository>,
   ) {
     super(Cohorte, dataSource);
-    this.cursoprogramados = this.createHasManyRepositoryFactoryFor(
-      'cursoprogramados',
-      getCursoprogramadoRepository,
+    this.cursosprogramados = this.createHasManyRepositoryFactoryFor(
+      'cursosprogramados',
+      cursoprogramadoRepositoryGetter,
     );
     this.cursocohortes = this.createHasManyRepositoryFactoryFor(
       'cursocohortes',
-      getCursocohorteRepository,
-    );
-    this.horariocursos = this.createHasManyRepositoryFactoryFor(
-      'horariocursos',
-      getHorariocursoRepository,
-    );
-    this.contacto = this.createBelongsToAccessorFor(
-      'contacto',
-      contactoRepositoryGetter,
+      cursocohorteRepositoryGetter,
     );
   }
 }

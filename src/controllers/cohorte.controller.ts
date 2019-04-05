@@ -16,20 +16,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import { Cohorte, Contacto } from '../models';
-import { CohorteRepository } from '../repositories';
+import {Cohorte} from '../models';
+import {CohorteRepository} from '../repositories';
 
 export class CohorteController {
   constructor(
     @repository(CohorteRepository)
-    public cohorteRepository: CohorteRepository,
-  ) { }
+    public cohorteRepository : CohorteRepository,
+  ) {}
 
   @post('/cohortes', {
     responses: {
       '200': {
         description: 'Cohorte model instance',
-        content: { 'application/json': { schema: { 'x-ts-type': Cohorte } } },
+        content: {'application/json': {schema: {'x-ts-type': Cohorte}}},
       },
     },
   })
@@ -41,7 +41,7 @@ export class CohorteController {
     responses: {
       '200': {
         description: 'Cohorte model count',
-        content: { 'application/json': { schema: CountSchema } },
+        content: {'application/json': {schema: CountSchema}},
       },
     },
   })
@@ -57,7 +57,7 @@ export class CohorteController {
         description: 'Array of Cohorte model instances',
         content: {
           'application/json': {
-            schema: { type: 'array', items: { 'x-ts-type': Cohorte } },
+            schema: {type: 'array', items: {'x-ts-type': Cohorte}},
           },
         },
       },
@@ -73,7 +73,7 @@ export class CohorteController {
     responses: {
       '200': {
         description: 'Cohorte PATCH success count',
-        content: { 'application/json': { schema: CountSchema } },
+        content: {'application/json': {schema: CountSchema}},
       },
     },
   })
@@ -88,7 +88,7 @@ export class CohorteController {
     responses: {
       '200': {
         description: 'Cohorte model instance',
-        content: { 'application/json': { schema: { 'x-ts-type': Cohorte } } },
+        content: {'application/json': {schema: {'x-ts-type': Cohorte}}},
       },
     },
   })
@@ -133,12 +133,5 @@ export class CohorteController {
   })
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.cohorteRepository.deleteById(id);
-  }
-
-  @get('/cohortes/{id}/contacto')
-  async getContacto(
-    @param.path.number('id') cohorteId: typeof Cohorte.prototype.id,
-  ): Promise<Contacto> {
-    return await this.cohorteRepository.contacto(cohorteId);
   }
 }

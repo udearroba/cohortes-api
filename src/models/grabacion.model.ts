@@ -1,8 +1,8 @@
 import { Entity, model, property, hasMany } from '@loopback/repository';
-import { Cursoprogramado } from './cursoprogramado.model';
+import { Archivo } from './archivo.model';
 
 @model()
-export class Materia extends Entity {
+export class Grabacion extends Entity {
   @property({
     type: 'number',
     id: true,
@@ -17,16 +17,15 @@ export class Materia extends Entity {
   idexterno: string;
 
   @property({
-    type: 'string',
-    required: true,
+    type: 'number'
   })
-  nombre: string;
+  ocurrenciaId: number;
 
-  @hasMany(() => Cursoprogramado)
-  cursosprogramados?: Cursoprogramado[];
+  @hasMany(() => Archivo)
+  archivos?: Archivo[];
 
 
-  constructor(data?: Partial<Materia>) {
+  constructor(data?: Partial<Grabacion>) {
     super(data);
   }
 }

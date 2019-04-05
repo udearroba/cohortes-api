@@ -1,9 +1,8 @@
 import { Entity, model, property, hasOne, hasMany } from '@loopback/repository';
-
 import { Horariocurso } from './horariocurso.model';
 import { Ocurrencia } from './ocurrencia.model';
 
-@model({ settings: { "strict": false } })
+@model()
 export class Reunionvideoconferencia extends Entity {
   @property({
     type: 'number',
@@ -44,19 +43,21 @@ export class Reunionvideoconferencia extends Entity {
 
   @property({
     type: 'string',
+  })
+  createdat?: string;
+
+  @property({
+    type: 'string',
     required: true,
   })
-  createdat: string;
+  nombre: string;
 
-  // Define well-known properties here
   @hasOne(() => Horariocurso)
   horariocurso?: Horariocurso;
 
   @hasMany(() => Ocurrencia)
   ocurrencias?: Ocurrencia[];
 
-  // Indexer property to allow additional data
-  [prop: string]: any;
 
   constructor(data?: Partial<Reunionvideoconferencia>) {
     super(data);

@@ -17,5 +17,14 @@
   "files.trimTrailingWhitespace": true,
 
   "tslint.ignoreDefinitionFiles": true,
-  "typescript.tsdk": "./node_modules/typescript/lib"
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#42b883",
+    "titleBar.inactiveBackground": "#42b88399",
+    "titleBar.activeForeground": "#000000",
+    "titleBar.inactiveForeground": "#00000099",
+    "statusBar.background": "#42b883",
+    "statusBarItem.hoverBackground": "#359268",
+    "statusBar.foreground": "#000000"
+  }
 }

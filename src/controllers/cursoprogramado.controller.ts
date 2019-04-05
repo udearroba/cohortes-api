@@ -16,20 +16,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import { Cursoprogramado, Materia, Cohorte } from '../models';
-import { CursoprogramadoRepository } from '../repositories';
+import {Cursoprogramado} from '../models';
+import {CursoprogramadoRepository} from '../repositories';
 
-export class CursoprogramdoController {
+export class CursoprogramadoController {
   constructor(
     @repository(CursoprogramadoRepository)
-    public cursoprogramadoRepository: CursoprogramadoRepository,
-  ) { }
+    public cursoprogramadoRepository : CursoprogramadoRepository,
+  ) {}
 
-  @post('/cursoprogramados', {
+  @post('/cursosprogramados', {
     responses: {
       '200': {
         description: 'Cursoprogramado model instance',
-        content: { 'application/json': { schema: { 'x-ts-type': Cursoprogramado } } },
+        content: {'application/json': {schema: {'x-ts-type': Cursoprogramado}}},
       },
     },
   })
@@ -37,11 +37,11 @@ export class CursoprogramdoController {
     return await this.cursoprogramadoRepository.create(cursoprogramado);
   }
 
-  @get('/cursoprogramados/count', {
+  @get('/cursosprogramados/count', {
     responses: {
       '200': {
         description: 'Cursoprogramado model count',
-        content: { 'application/json': { schema: CountSchema } },
+        content: {'application/json': {schema: CountSchema}},
       },
     },
   })
@@ -51,13 +51,13 @@ export class CursoprogramdoController {
     return await this.cursoprogramadoRepository.count(where);
   }
 
-  @get('/cursoprogramados', {
+  @get('/cursosprogramados', {
     responses: {
       '200': {
         description: 'Array of Cursoprogramado model instances',
         content: {
           'application/json': {
-            schema: { type: 'array', items: { 'x-ts-type': Cursoprogramado } },
+            schema: {type: 'array', items: {'x-ts-type': Cursoprogramado}},
           },
         },
       },
@@ -69,11 +69,11 @@ export class CursoprogramdoController {
     return await this.cursoprogramadoRepository.find(filter);
   }
 
-  @patch('/cursoprogramados', {
+  @patch('/cursosprogramados', {
     responses: {
       '200': {
         description: 'Cursoprogramado PATCH success count',
-        content: { 'application/json': { schema: CountSchema } },
+        content: {'application/json': {schema: CountSchema}},
       },
     },
   })
@@ -84,11 +84,11 @@ export class CursoprogramdoController {
     return await this.cursoprogramadoRepository.updateAll(cursoprogramado, where);
   }
 
-  @get('/cursoprogramados/{id}', {
+  @get('/cursosprogramados/{id}', {
     responses: {
       '200': {
         description: 'Cursoprogramado model instance',
-        content: { 'application/json': { schema: { 'x-ts-type': Cursoprogramado } } },
+        content: {'application/json': {schema: {'x-ts-type': Cursoprogramado}}},
       },
     },
   })
@@ -96,7 +96,7 @@ export class CursoprogramdoController {
     return await this.cursoprogramadoRepository.findById(id);
   }
 
-  @patch('/cursoprogramados/{id}', {
+  @patch('/cursosprogramados/{id}', {
     responses: {
       '204': {
         description: 'Cursoprogramado PATCH success',
@@ -110,7 +110,7 @@ export class CursoprogramdoController {
     await this.cursoprogramadoRepository.updateById(id, cursoprogramado);
   }
 
-  @put('/cursoprogramados/{id}', {
+  @put('/cursosprogramados/{id}', {
     responses: {
       '204': {
         description: 'Cursoprogramado PUT success',
@@ -124,7 +124,7 @@ export class CursoprogramdoController {
     await this.cursoprogramadoRepository.replaceById(id, cursoprogramado);
   }
 
-  @del('/cursoprogramados/{id}', {
+  @del('/cursosprogramados/{id}', {
     responses: {
       '204': {
         description: 'Cursoprogramado DELETE success',
@@ -133,19 +133,5 @@ export class CursoprogramdoController {
   })
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.cursoprogramadoRepository.deleteById(id);
-  }
-
-  @get('/cursoprogramados/{id}/materia')
-  async getMateria(
-    @param.path.number('id') cursoprogramadoId: typeof Cursoprogramado.prototype.id,
-  ): Promise<Materia> {
-    return await this.cursoprogramadoRepository.materia(cursoprogramadoId);
-  }
-
-  @get('/cursoprogramados/{id}/cohorte')
-  async getCohorte(
-    @param.path.number('id') cursoprogramadoId: typeof Cursoprogramado.prototype.id,
-  ): Promise<Cohorte> {
-    return await this.cursoprogramadoRepository.cohorte(cursoprogramadoId);
   }
 }

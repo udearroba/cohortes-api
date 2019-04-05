@@ -16,20 +16,20 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import { Cursocohorte, Cohorte } from '../models';
-import { CursocohorteRepository } from '../repositories';
+import {Cursocohorte} from '../models';
+import {CursocohorteRepository} from '../repositories';
 
 export class CursocohorteController {
   constructor(
     @repository(CursocohorteRepository)
-    public cursocohorteRepository: CursocohorteRepository,
-  ) { }
+    public cursocohorteRepository : CursocohorteRepository,
+  ) {}
 
   @post('/cursocohortes', {
     responses: {
       '200': {
         description: 'Cursocohorte model instance',
-        content: { 'application/json': { schema: { 'x-ts-type': Cursocohorte } } },
+        content: {'application/json': {schema: {'x-ts-type': Cursocohorte}}},
       },
     },
   })
@@ -41,7 +41,7 @@ export class CursocohorteController {
     responses: {
       '200': {
         description: 'Cursocohorte model count',
-        content: { 'application/json': { schema: CountSchema } },
+        content: {'application/json': {schema: CountSchema}},
       },
     },
   })
@@ -57,7 +57,7 @@ export class CursocohorteController {
         description: 'Array of Cursocohorte model instances',
         content: {
           'application/json': {
-            schema: { type: 'array', items: { 'x-ts-type': Cursocohorte } },
+            schema: {type: 'array', items: {'x-ts-type': Cursocohorte}},
           },
         },
       },
@@ -73,7 +73,7 @@ export class CursocohorteController {
     responses: {
       '200': {
         description: 'Cursocohorte PATCH success count',
-        content: { 'application/json': { schema: CountSchema } },
+        content: {'application/json': {schema: CountSchema}},
       },
     },
   })
@@ -88,7 +88,7 @@ export class CursocohorteController {
     responses: {
       '200': {
         description: 'Cursocohorte model instance',
-        content: { 'application/json': { schema: { 'x-ts-type': Cursocohorte } } },
+        content: {'application/json': {schema: {'x-ts-type': Cursocohorte}}},
       },
     },
   })
@@ -133,12 +133,5 @@ export class CursocohorteController {
   })
   async deleteById(@param.path.number('id') id: number): Promise<void> {
     await this.cursocohorteRepository.deleteById(id);
-  }
-
-  @get('/cursocohortes/{id}/cohorte')
-  async getCohorte(
-    @param.path.number('id') cursocohorteId: typeof Cursocohorte.prototype.id,
-  ): Promise<Cohorte> {
-    return await this.cursocohorteRepository.cohorte(cursocohorteId);
   }
 }

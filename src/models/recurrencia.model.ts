@@ -1,8 +1,7 @@
 import { Entity, model, property, hasMany } from '@loopback/repository';
-
 import { Horariocurso } from './horariocurso.model';
 
-@model({ settings: { "strict": false } })
+@model()
 export class Recurrencia extends Entity {
   @property({
     type: 'number',
@@ -17,12 +16,9 @@ export class Recurrencia extends Entity {
   })
   nombre: string;
 
-  // Define well-known properties here
   @hasMany(() => Horariocurso)
   horariocursos?: Horariocurso[];
 
-  // Indexer property to allow additional data
-  [prop: string]: any;
 
   constructor(data?: Partial<Recurrencia>) {
     super(data);

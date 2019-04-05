@@ -1,12 +1,7 @@
 import { Entity, model, property, belongsTo } from '@loopback/repository';
-
-import { Cohorte } from './cohorte.model';
-import { Cursocohorte } from './cursocohorte.model';
-import { Contacto } from './contacto.model';
-import { Recurrencia } from './recurrencia.model';
 import { Reunionvideoconferencia } from './reunionvideoconferencia.model';
 
-@model({ settings: { "strict": false } })
+@model()
 export class Horariocurso extends Entity {
   @property({
     type: 'number',
@@ -15,56 +10,52 @@ export class Horariocurso extends Entity {
   })
   id: number;
 
-
-
-
-
   @property({
-    type: 'string',
+    type: 'date',
     required: true,
   })
   fechainicial: string;
 
   @property({
-    type: 'string',
+    type: 'date',
     required: true,
   })
   fechafinal: string;
 
   @property({
-    type: 'number',
+    type: 'boolean',
   })
-  lunes?: number;
+  lunes?: boolean;
 
   @property({
-    type: 'number',
+    type: 'boolean',
   })
-  martes?: number;
+  martes?: boolean;
 
   @property({
-    type: 'number',
+    type: 'boolean',
   })
-  miercoles?: number;
+  miercoles?: boolean;
 
   @property({
-    type: 'number',
+    type: 'boolean',
   })
-  jueves?: number;
+  jueves?: boolean;
 
   @property({
-    type: 'number',
+    type: 'boolean',
   })
-  viernes?: number;
+  viernes?: boolean;
 
   @property({
-    type: 'number',
+    type: 'boolean',
   })
-  sabado?: number;
+  sabado?: boolean;
 
   @property({
-    type: 'number',
+    type: 'boolean',
   })
-  domingo?: number;
+  domingo?: boolean;
 
   @property({
     type: 'number',
@@ -72,14 +63,11 @@ export class Horariocurso extends Entity {
   })
   duracion: number;
 
-
-
   @property({
-    type: 'number',
+    type: 'boolean',
     required: true,
   })
   necesitavideoconferencia: number;
-
 
   @property({
     type: 'number',
@@ -87,26 +75,24 @@ export class Horariocurso extends Entity {
   })
   periodo: number;
 
-
-
-  // Define well-known properties here
-  @belongsTo(() => Contacto, { keyTo: 'id' })
-  profesor1Id: number;
-
-  @belongsTo(() => Cohorte)
-  cohorteId: number;
-
-  @belongsTo(() => Cursocohorte)
+  @property({
+    type: 'number'
+  })
   cursocohorteId: number;
 
-  @belongsTo(() => Recurrencia)
+  @property({
+    type: 'number'
+  })
+  profesor1Id: number;
+
+  @property({
+    type: 'number'
+  })
   recurrenciaId: number;
 
   @belongsTo(() => Reunionvideoconferencia)
   reunionvideoconferenciaId: number;
 
-  // Indexer property to allow additional data
-  [prop: string]: any;
 
   constructor(data?: Partial<Horariocurso>) {
     super(data);
