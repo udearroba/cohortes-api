@@ -89,6 +89,11 @@ export class Horariocurso extends Entity {
   })
   profesor1Id: number;
 
+  @property({
+    type: 'number'
+  })
+  recurrenciaId: number;
+
 
   constructor(data?: Partial<Horariocurso>) {
     super(data);
