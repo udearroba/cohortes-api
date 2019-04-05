@@ -20,3 +20,5 @@ export * from './reunionvideoconferencia.controller';
 export * from './reunionvideoconferencia-horariocurso.controller';
 export * from './ocurrencia.controller';
 export * from './reunionvideoconferencia-ocurrencia.controller';
+export * from './grabacion.controller';
+export * from './archivo.controller';

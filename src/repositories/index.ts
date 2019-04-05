@@ -8,3 +8,5 @@ export * from './horariocurso.repository';
 export * from './recurrencia.repository';
 export * from './reunionvideoconferencia.repository';
 export * from './ocurrencia.repository';
+export * from './grabacion.repository';
+export * from './archivo.repository';
