@@ -6,3 +6,5 @@ export * from './materia.controller';
 export * from './cursoprogramado.controller';
 export * from './materia-cursoprogramado.controller';
 export * from './cohorte-cursoprogramado.controller';
+export * from './metacurso.controller';
+export * from './cursoprogramado-metacurso.controller';

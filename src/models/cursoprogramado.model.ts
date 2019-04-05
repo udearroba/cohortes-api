@@ -1,4 +1,5 @@
-import { Entity, model, property } from '@loopback/repository';
+import { Entity, model, property, hasMany } from '@loopback/repository';
+import { Metacurso } from './metacurso.model';
 
 @model()
 export class Cursoprogramado extends Entity {
@@ -24,6 +25,9 @@ export class Cursoprogramado extends Entity {
     type: 'number'
   })
   cohorteId: number;
+
+  @hasMany(() => Metacurso)
+  metacursos?: Metacurso[];
 
 
   constructor(data?: Partial<Cursoprogramado>) {
