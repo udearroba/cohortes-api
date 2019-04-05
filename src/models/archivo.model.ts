@@ -27,6 +27,11 @@ export class Archivo extends Entity {
   })
   url: string;
 
+  @property({
+    type: 'number'
+  })
+  grabacionId: number;
+
 
   constructor(data?: Partial<Archivo>) {
     super(data);

@@ -1,4 +1,5 @@
-import {Entity, model, property} from '@loopback/repository';
+import { Entity, model, property, hasMany } from '@loopback/repository';
+import { Archivo } from './archivo.model';
 
 @model()
 export class Grabacion extends Entity {
@@ -14,6 +15,14 @@ export class Grabacion extends Entity {
     required: true,
   })
   idexterno: string;
+
+  @property({
+    type: 'number'
+  })
+  ocurrenciaId: number;
+
+  @hasMany(() => Archivo)
+  archivos?: Archivo[];
 
 
   constructor(data?: Partial<Grabacion>) {
