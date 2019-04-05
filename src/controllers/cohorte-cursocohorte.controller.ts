@@ -8,11 +8,11 @@ export class CohorteCursocohorteController {
     @repository(CohorteRepository) protected cohorteRepo: CohorteRepository,
   ) { }
 
-  @get('/contactos/{id}/cohortes')
+  @get('/cohortes/{id}/cursocohortes')
   async find(
     @param.path.number('id') id: number,
     @param.query.object('filter') filter?: Filter,
   ): Promise<Cursocohorte[]> {
-    return await this.cohorteRepo.cursoscohortes(id).find(filter);
+    return await this.cohorteRepo.cursocohortes(id).find(filter);
   }
 }

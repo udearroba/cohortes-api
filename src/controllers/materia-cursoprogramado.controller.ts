@@ -3,11 +3,6 @@ import { MateriaRepository } from "../repositories";
 import { post, param, requestBody } from "@loopback/rest";
 import { Cursoprogramado } from "../models";
 
-// Uncomment these imports to begin using these cool features!
-
-// import {inject} from '@loopback/context';
-
-
 export class MateriaCursoprogramadoController {
   constructor(
     @repository(MateriaRepository) protected materiaRepo: MateriaRepository,

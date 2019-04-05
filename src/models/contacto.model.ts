@@ -1,5 +1,6 @@
 import { Entity, model, property, hasMany } from '@loopback/repository';
 import { Cohorte } from './cohorte.model';
+import { Horariocurso } from './horariocurso.model';
 
 @model()
 export class Contacto extends Entity {
@@ -34,6 +35,9 @@ export class Contacto extends Entity {
 
   @hasMany(() => Cohorte, { keyTo: "coordinadoracademicoId" })
   cohortes?: Cohorte[];
+
+  @hasMany(() => Horariocurso, { keyTo: "profesor1Id" })
+  horariocursos?: Cohorte[];
 
 
   constructor(data?: Partial<Contacto>) {

@@ -11,3 +11,6 @@ export * from './cursoprogramado-metacurso.controller';
 export * from './cursocohorte.controller';
 export * from './cursocohorte-metacurso.controller';
 export * from './cohorte-cursocohorte.controller';
+export * from './horariocurso.controller';
+export * from './cursocohorte-horariocurso.controller';
+export * from './contacto-horariocurso.controller';

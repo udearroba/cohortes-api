@@ -1,18 +1,18 @@
 import { repository, Filter } from "@loopback/repository";
 import { CursocohorteRepository } from "../repositories";
-import { Metacurso } from "../models";
 import { get, param } from "@loopback/rest";
+import { Horariocurso } from "../models";
 
-export class CursocohorteMetacursoController {
+export class CursocohorteHorariocursoController {
   constructor(
     @repository(CursocohorteRepository) protected cursocohorteRepo: CursocohorteRepository,
   ) { }
 
-  @get('/cursocohortes/{id}/metacursos')
+  @get('/cursocohortes/{id}/horariocursos')
   async find(
     @param.path.number('id') id: number,
     @param.query.object('filter') filter?: Filter,
-  ): Promise<Metacurso[]> {
-    return await this.cursocohorteRepo.metacursos(id).find(filter);
+  ): Promise<Horariocurso[]> {
+    return await this.cursocohorteRepo.horariocursos(id).find(filter);
   }
 }

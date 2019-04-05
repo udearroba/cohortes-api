@@ -4,3 +4,4 @@ export * from './materia.model';
 export * from './cursoprogramado.model';
 export * from './metacurso.model';
 export * from './cursocohorte.model';
+export * from './horariocurso.model';

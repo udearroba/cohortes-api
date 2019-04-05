@@ -14,7 +14,7 @@ export class CohorteRepository extends DefaultCrudRepository<
     Cursoprogramado,
     typeof Cohorte.prototype.id
   >;
-  public readonly cursoscohortes: HasManyRepositoryFactory<
+  public readonly cursocohortes: HasManyRepositoryFactory<
     Cursocohorte,
     typeof Cohorte.prototype.id
   >;
@@ -30,8 +30,8 @@ export class CohorteRepository extends DefaultCrudRepository<
       'cursosprogramados',
       cursoprogramadoRepositoryGetter,
     );
-    this.cursoscohortes = this.createHasManyRepositoryFactoryFor(
-      'cursoscohortes',
+    this.cursocohortes = this.createHasManyRepositoryFactoryFor(
+      'cursocohortes',
       cursocohorteRepositoryGetter,
     );
   }

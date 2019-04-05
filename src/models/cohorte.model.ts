@@ -50,7 +50,7 @@ export class Cohorte extends Entity {
   cursosprogramados?: Cursoprogramado[];
 
   @hasMany(() => Cursocohorte)
-  cursoscohortes?: Cursocohorte[];
+  cursocohortes?: Cursocohorte[];
 
   constructor(data?: Partial<Cohorte>) {
     super(data);

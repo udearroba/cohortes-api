@@ -1,5 +1,6 @@
 import { Entity, model, property, hasMany } from '@loopback/repository';
 import { Metacurso } from './metacurso.model';
+import { Horariocurso } from './horariocurso.model';
 
 @model()
 export class Cursocohorte extends Entity {
@@ -39,6 +40,9 @@ export class Cursocohorte extends Entity {
 
   @hasMany(() => Metacurso)
   metacursos?: Metacurso[];
+
+  @hasMany(() => Horariocurso)
+  horariocursos?: Horariocurso[];
 
 
   constructor(data?: Partial<Cursocohorte>) {
