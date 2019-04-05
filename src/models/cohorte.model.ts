@@ -1,5 +1,6 @@
 import { Entity, model, property, hasMany } from '@loopback/repository';
 import { Cursoprogramado } from './cursoprogramado.model';
+import { Cursocohorte } from './cursocohorte.model';
 
 @model()
 export class Cohorte extends Entity {
@@ -47,6 +48,9 @@ export class Cohorte extends Entity {
 
   @hasMany(() => Cursoprogramado)
   cursosprogramados?: Cursoprogramado[];
+
+  @hasMany(() => Cursocohorte)
+  cursoscohortes?: Cursocohorte[];
 
   constructor(data?: Partial<Cohorte>) {
     super(data);

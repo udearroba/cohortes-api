@@ -10,3 +10,4 @@ export * from './metacurso.controller';
 export * from './cursoprogramado-metacurso.controller';
 export * from './cursocohorte.controller';
 export * from './cursocohorte-metacurso.controller';
+export * from './cohorte-cursocohorte.controller';

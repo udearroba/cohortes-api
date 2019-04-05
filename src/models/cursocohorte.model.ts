@@ -32,6 +32,11 @@ export class Cursocohorte extends Entity {
   })
   urllms?: string;
 
+  @property({
+    type: 'number',
+  })
+  cohorteId?: string;
+
   @hasMany(() => Metacurso)
   metacursos?: Metacurso[];
 
