@@ -8,7 +8,7 @@ export class GrabacionArchivoController {
     @repository(GrabacionRepository) protected grabacionRepo: GrabacionRepository,
   ) { }
 
-  @get('/cursocohortes/{id}/metacursos')
+  @get('/grabaciones/{id}/archivos')
   async find(
     @param.path.number('id') id: number,
     @param.query.object('filter') filter?: Filter,
