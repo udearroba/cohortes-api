@@ -13,6 +13,7 @@ export class Grabacion extends Entity {
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   idexterno: string;
 

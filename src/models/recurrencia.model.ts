@@ -13,6 +13,7 @@ export class Recurrencia extends Entity {
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   nombre: string;
 

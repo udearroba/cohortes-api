@@ -14,29 +14,34 @@ export class Cohorte extends Entity {
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   nombre: string;
 
   @property({
     type: 'string',
     required: true,
+    limit: 10,
   })
   codigo: string;
 
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   descripcion: string;
 
   @property({
     type: 'date',
+    dataType: 'date',
     required: true,
   })
   fechainicio: string;
 
   @property({
     type: 'date',
+    dataType: 'date',
     required: true,
   })
   fechafinal: string;

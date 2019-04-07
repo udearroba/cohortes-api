@@ -14,22 +14,26 @@ export class Contacto extends Entity {
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   email1: string;
 
   @property({
     type: 'string',
+    limit: 45,
   })
   email2?: string;
 
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   nombre: string;
 
   @property({
     type: 'string',
+    limit: 45,
   })
   telefono?: string;
 

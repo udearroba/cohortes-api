@@ -14,12 +14,14 @@ export class Ocurrencia extends Entity {
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   idexterno: string;
 
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   starttime: string;
 
@@ -32,6 +34,7 @@ export class Ocurrencia extends Entity {
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   status: string;
 

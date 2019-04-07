@@ -12,18 +12,21 @@ export class Archivo extends Entity {
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   idexterno: string;
 
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   formato: string;
 
   @property({
     type: 'string',
     required: true,
+    limit: 255,
   })
   url: string;
 

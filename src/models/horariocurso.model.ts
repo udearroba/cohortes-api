@@ -12,12 +12,14 @@ export class Horariocurso extends Entity {
 
   @property({
     type: 'date',
+    dataType: 'date',
     required: true,
   })
   fechainicial: string;
 
   @property({
     type: 'date',
+    dataType: 'date',
     required: true,
   })
   fechafinal: string;

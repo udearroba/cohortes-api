@@ -14,6 +14,7 @@ export class Cursocohorte extends Entity {
   @property({
     type: 'string',
     required: true,
+    limit: 45,
   })
   nombre: string;
 
@@ -25,11 +26,13 @@ export class Cursocohorte extends Entity {
 
   @property({
     type: 'string',
+    limit: 15,
   })
   idlms?: string;
 
   @property({
     type: 'string',
+    limit: 100,
   })
   urllms?: string;
 
