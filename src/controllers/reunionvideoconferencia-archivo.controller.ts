@@ -17,7 +17,7 @@ export class ReunionvideoconferenciaArchivoController {
     protected grabacionRepo: GrabacionRepository,
   ) { }
 
-  @get('/reunionvideoconferencias/{id}/grabaciones') //ocurrencias
+  @get('/reunionvideoconferencias/{id}/archivos') //ocurrencias
   async find(
     @param.path.number('id') id: number,
     @param.query.object('filter') filter?: Filter,
