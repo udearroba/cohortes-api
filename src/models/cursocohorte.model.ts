@@ -7,7 +7,6 @@ export class Cursocohorte extends Entity {
   @property({
     type: 'number',
     id: true,
-    required: true,
   })
   id: number;
 
