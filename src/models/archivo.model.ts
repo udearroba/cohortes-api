@@ -1,4 +1,4 @@
-import { Entity, model, property } from '@loopback/repository';
+import {Entity, model, property} from '@loopback/repository';
 
 @model()
 export class Archivo extends Entity {
@@ -30,10 +30,14 @@ export class Archivo extends Entity {
   url: string;
 
   @property({
-    type: 'number'
+    type: 'number',
   })
   grabacionId: number;
 
+  @property({
+    type: 'number',
+  })
+  pesobyte: number;
 
   constructor(data?: Partial<Archivo>) {
     super(data);
