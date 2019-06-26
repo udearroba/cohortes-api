@@ -12,14 +12,14 @@ export class Grabacion extends Entity {
   @property({
     type: 'string',
     required: true,
-    limit: 45,
+    limit: 100,
   })
   idexterno: string;
 
   @property({
     type: 'string',
     required: true,
-    limit: 45,
+    limit: 512,
   })
   playurl: string;
 

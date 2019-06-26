@@ -11,7 +11,7 @@ export class Archivo extends Entity {
   @property({
     type: 'string',
     required: true,
-    limit: 45,
+    limit: 100,
   })
   idexterno: string;
 
