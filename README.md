@@ -29,18 +29,11 @@ Debe tenerse MySQL instalado en la máquina, crearse una base de datos llamada *
   "database": "cohortes"
 }
 ```
-Luego, en el directorio del proyecto ejecute las siguientes líneas.
+Luego, es necesario crear el esquema en la base de datos *cohortes*, creada anteriormente.
+El script sql para crear el esquema puede encontrarlo [aquí](https://github.com/ealejandro101/cohortes-admin/wiki/Script).
 
-```python
+Por último, para iniciar el proyecto, ejecute ``npm run start``.
 
-npm run build # hace las construcciones necesarias al proyecto
-npm run migrate # hace la migración de los repositorios basados en los modelos que hay en LoopBack hacia la base de datos
-```
-
-Por último, para iniciar el proyecto, ejecute 
-```python
-npm run start
-```
 El proyecto se ejecutará en el localhost, puerto **3000**.
 
 ## License
