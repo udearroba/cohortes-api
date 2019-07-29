@@ -10,3 +10,5 @@ export * from './reunionvideoconferencia.model';
 export * from './ocurrencia.model';
 export * from './grabacion.model';
 export * from './archivo.model';
+export * from './formulario.model';
+export * from './respuesta.model';

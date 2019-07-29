@@ -10,3 +10,5 @@ export * from './reunionvideoconferencia.repository';
 export * from './ocurrencia.repository';
 export * from './grabacion.repository';
 export * from './archivo.repository';
+export * from './formulario.repository';
+export * from './respuesta.repository';

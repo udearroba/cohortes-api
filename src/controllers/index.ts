@@ -25,3 +25,6 @@ export * from './archivo.controller';
 export * from './ocurrencia-grabacion.controller';
 export * from './grabacion-archivo.controller';
 export * from './reunionvideoconferencia-archivo.controller';
+export * from './formulario.controller';
+export * from './respuesta.controller';
+export * from './formulario-respuesta.controller';
