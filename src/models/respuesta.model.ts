@@ -22,6 +22,13 @@ export class Respuesta extends Entity {
   })
   respuestas: string;
 
+ @property({
+    type: 'string',
+    required: true,
+    limit: 65535,
+  })
+  formularioRespuestas: string;
+  
   @property({
     type: 'number',
   })
