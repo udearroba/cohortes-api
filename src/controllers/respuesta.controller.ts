@@ -17,33 +17,24 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Respuesta} from '../models';
-import {RespuestaRepository} from '../repositories';
+import { Respuesta } from '../models';
+import { RespuestaRepository } from '../repositories';
 
 export class RespuestaController {
   constructor(
     @repository(RespuestaRepository)
-    public respuestaRepository : RespuestaRepository,
-  ) {}
+    public respuestaRepository: RespuestaRepository,
+  ) { }
 
   @post('/respuestas', {
     responses: {
       '200': {
         description: 'Respuesta model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Respuesta)}},
+        content: { 'application/json': { schema: getModelSchemaRef(Respuesta) } },
       },
     },
   })
-  async create(
-    @requestBody({
-      content: {
-        'application/json': {
-          schema: getModelSchemaRef(Respuesta, {exclude: ['id']}),
-        },
-      },
-    })
-    respuesta: Omit<Respuesta, 'id'>,
-  ): Promise<Respuesta> {
+  async create(@requestBody() respuesta: Respuesta): Promise<Respuesta> {
     return await this.respuestaRepository.create(respuesta);
   }
 
@@ -51,7 +42,7 @@ export class RespuestaController {
     responses: {
       '200': {
         description: 'Respuesta model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -67,7 +58,7 @@ export class RespuestaController {
         description: 'Array of Respuesta model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(Respuesta)},
+            schema: { type: 'array', items: getModelSchemaRef(Respuesta) },
           },
         },
       },
@@ -83,7 +74,7 @@ export class RespuestaController {
     responses: {
       '200': {
         description: 'Respuesta PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -91,7 +82,7 @@ export class RespuestaController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Respuesta, {partial: true}),
+          schema: getModelSchemaRef(Respuesta, { partial: true }),
         },
       },
     })
@@ -105,7 +96,7 @@ export class RespuestaController {
     responses: {
       '200': {
         description: 'Respuesta model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Respuesta)}},
+        content: { 'application/json': { schema: getModelSchemaRef(Respuesta) } },
       },
     },
   })
@@ -125,7 +116,7 @@ export class RespuestaController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Respuesta, {partial: true}),
+          schema: getModelSchemaRef(Respuesta, { partial: true }),
         },
       },
     })

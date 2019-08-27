@@ -34,18 +34,6 @@ export class FormularioController {
       },
     },
   })
-  /** async create(
-     @requestBody({
-       content: {
-         'application/json': {
-           schema: getModelSchemaRef(Formulario, { exclude: ['id'] }),
-         },
-       },
-     })
-     formulario: Omit<Formulario, 'id'>,
-   ): Promise<Formulario> {
-     return await this.formularioRepository.create(formulario);
-   }**/
   async create(@requestBody() formulario: Formulario): Promise<Formulario> {
     return await this.formularioRepository.create(formulario);
   }
