@@ -1,6 +1,6 @@
-import {Entity, model, property} from '@loopback/repository';
+import { Entity, model, property } from '@loopback/repository';
 
-@model({settings: {strict: false}})
+@model({ settings: { strict: false } })
 export class Respuesta extends Entity {
   @property({
     type: 'number',
@@ -22,13 +22,13 @@ export class Respuesta extends Entity {
   })
   respuestas: string;
 
- @property({
+  @property({
     type: 'string',
     required: true,
     limit: 65535,
   })
   formularioRespuestas: string;
-  
+
   @property({
     type: 'number',
   })

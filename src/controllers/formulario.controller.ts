@@ -17,33 +17,36 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {Formulario} from '../models';
-import {FormularioRepository} from '../repositories';
+import { Formulario } from '../models';
+import { FormularioRepository } from '../repositories';
 
 export class FormularioController {
   constructor(
     @repository(FormularioRepository)
-    public formularioRepository : FormularioRepository,
-  ) {}
+    public formularioRepository: FormularioRepository,
+  ) { }
 
   @post('/formularios', {
     responses: {
       '200': {
         description: 'Formulario model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Formulario)}},
+        content: { 'application/json': { schema: { 'x-ts-type': Formulario } } },
       },
     },
   })
-  async create(
-    @requestBody({
-      content: {
-        'application/json': {
-          schema: getModelSchemaRef(Formulario, {exclude: ['id']}),
-        },
-      },
-    })
-    formulario: Omit<Formulario, 'id'>,
-  ): Promise<Formulario> {
+  /** async create(
+     @requestBody({
+       content: {
+         'application/json': {
+           schema: getModelSchemaRef(Formulario, { exclude: ['id'] }),
+         },
+       },
+     })
+     formulario: Omit<Formulario, 'id'>,
+   ): Promise<Formulario> {
+     return await this.formularioRepository.create(formulario);
+   }**/
+  async create(@requestBody() formulario: Formulario): Promise<Formulario> {
     return await this.formularioRepository.create(formulario);
   }
 
@@ -51,7 +54,7 @@ export class FormularioController {
     responses: {
       '200': {
         description: 'Formulario model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -67,7 +70,7 @@ export class FormularioController {
         description: 'Array of Formulario model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: getModelSchemaRef(Formulario)},
+            schema: { type: 'array', items: getModelSchemaRef(Formulario) },
           },
         },
       },
@@ -83,7 +86,7 @@ export class FormularioController {
     responses: {
       '200': {
         description: 'Formulario PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -91,7 +94,7 @@ export class FormularioController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Formulario, {partial: true}),
+          schema: getModelSchemaRef(Formulario, { partial: true }),
         },
       },
     })
@@ -105,7 +108,7 @@ export class FormularioController {
     responses: {
       '200': {
         description: 'Formulario model instance',
-        content: {'application/json': {schema: getModelSchemaRef(Formulario)}},
+        content: { 'application/json': { schema: getModelSchemaRef(Formulario) } },
       },
     },
   })
@@ -125,7 +128,7 @@ export class FormularioController {
     @requestBody({
       content: {
         'application/json': {
-          schema: getModelSchemaRef(Formulario, {partial: true}),
+          schema: getModelSchemaRef(Formulario, { partial: true }),
         },
       },
     })
