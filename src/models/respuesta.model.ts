@@ -11,7 +11,6 @@ export class Respuesta extends Entity {
 
   @property({
     type: 'date',
-    required: true,
   })
   fechaHora: string;
 
