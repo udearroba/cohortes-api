@@ -46,10 +46,9 @@ export class Reunionvideoconferencia extends Entity {
   hostid: string;
 
   @property({
-    type: 'string',
-    limit: 45,
+    type: 'number',
   })
-  createdat?: string;
+  createdate?: number;
 
   @property({
     type: 'string',
