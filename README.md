@@ -36,5 +36,15 @@ Por último, para iniciar el proyecto, ejecute ``npm run start``.
 
 El proyecto se ejecutará en el localhost, puerto **3000**.
 
+## Importación Base de datos
+
+Para importar la base de datos utilice el script sql para crear la estructutura DDL ubicado en el directorio /doc/ en el archivo cohortes.sql
+
+https://github.com/udearroba/cohortes-api/blob/master/doc/cohortes.sql
+
+Para crear el formulario de curadurias importe el script sql ubicado en el directorio /doc/ en el archivo volcado_cohortes.sql
+
+https://github.com/udearroba/cohortes-api/blob/master/doc/volcado_cohortes.sql
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
