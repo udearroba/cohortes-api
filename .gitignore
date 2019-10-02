@@ -65,3 +65,4 @@ api-docs/
 
 # editor
 /.vscode
+src/datasources/cohortesds.datasource.json
