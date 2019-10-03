@@ -1,7 +1,7 @@
 {
   "name": "cohortes",
-  "version": "1.0.0",
-  "description": "Work",
+  "version": "1.3.1",
+  "description": "Api de la aplicación Cohortes",
   "keywords": [
     "loopback-application",
     "loopback"

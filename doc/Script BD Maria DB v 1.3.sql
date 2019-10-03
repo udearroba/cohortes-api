@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS Reunionvideoconferencia (
  `hostid` VARCHAR(45) NOT NULL,
  `createdate` BIGINT(20) NOT NULL,
  `nombre` VARCHAR(128) NOT NULL, PRIMARY KEY (`id`))
-;
+; 
 
 
 -- -----------------------------------------------------
