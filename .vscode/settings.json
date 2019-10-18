@@ -19,12 +19,13 @@
   "tslint.ignoreDefinitionFiles": true,
   "typescript.tsdk": "./node_modules/typescript/lib",
   "workbench.colorCustomizations": {
-    "titleBar.activeBackground": "#42b883",
-    "titleBar.inactiveBackground": "#42b88399",
-    "titleBar.activeForeground": "#000000",
-    "titleBar.inactiveForeground": "#00000099",
-    "statusBar.background": "#42b883",
-    "statusBarItem.hoverBackground": "#359268",
-    "statusBar.foreground": "#000000"
-  }
+    "titleBar.activeBackground": "#b52e31",
+    "titleBar.inactiveBackground": "#b52e3199",
+    "titleBar.activeForeground": "#e7e7ee",
+    "titleBar.inactiveForeground": "#e7e7ee99",
+    "statusBar.background": "#b52e31",
+    "statusBarItem.hoverBackground": "#d04649",
+    "statusBar.foreground": "#e7e7ee"
+  },
+  "peacock.color": "#b52e31"
 }

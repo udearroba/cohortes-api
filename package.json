@@ -8,7 +8,8 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=8.9"
+    "node": ">=12.11.1",
+    "npm": ">= 6.11.3"
   },
   "scripts": {
     "build": "lb-tsc",
@@ -34,7 +35,7 @@
     "type": "git"
   },
   "author": "",
-  "license": "",
+  "license": "MIT",
   "files": [
     "README.md",
     "index.js",

@@ -1365,23 +1365,16 @@
         "version": "9f06e41ffe3c7e8fbf644a8741502c0c74f01eb24f7bd056241c1cb3c7da4fe1",
         "signature": "9f06e41ffe3c7e8fbf644a8741502c0c74f01eb24f7bd056241c1cb3c7da4fe1"
       },
-      "./src/datasources/memorydb.datasource.json": {
-        "version": "dbfe9c63a43c37452cdc226da5cbfcda9fbb60ea370f99de72d3f9b4e90a7bd1"
-      },
-      "./src/datasources/memorydb.datasource.ts": {
-        "version": "8129acb374cf4cf487593b399594eb3afc4202c1fe431c3d216b43727456d327",
-        "signature": "13b9cc9cf884ca5b31e14d0a7c3497b035ad0cbe282dbde0df02df1d2ac3c714"
-      },
       "./src/datasources/cohortesds.datasource.json": {
-        "version": "348b0b004dec5f4aa367049aee4b406f7b8798ad4a7cda6714a76d9c2a3733f2"
+        "version": "629c22f180113bb76738ba73da49edd5cd122c7e7d8c6f8e18c5dc30015488d2"
       },
       "./src/datasources/cohortesds.datasource.ts": {
         "version": "90346089da7de85613b5e448295ab307eec61b841bec1612cf461024f2bd6221",
         "signature": "7077c79091577ac8fb6092726cb696a120c61ce34c4dd7fa1312ab9b0f1655de"
       },
       "./src/datasources/index.ts": {
-        "version": "173a4847c35b3cc63aaa8731604389308717b5fea7a2ca216886406e46d0a527",
-        "signature": "173a4847c35b3cc63aaa8731604389308717b5fea7a2ca216886406e46d0a527"
+        "version": "b1ac1feb9130a3fd8cc740b25cc616ddd13d03779f23b11f5109f30af541b758",
+        "signature": "b1ac1feb9130a3fd8cc740b25cc616ddd13d03779f23b11f5109f30af541b758"
       },
       "./src/repositories/metacurso.repository.ts": {
         "version": "d99f1000dfb3f88172323e060bd7fe06767afcf4c5384732c44502dc901ec96f",
@@ -3888,17 +3881,6 @@
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
-      "./src/datasources/memorydb.datasource.json": [
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
-      "./src/datasources/memorydb.datasource.ts": [
-        "./node_modules/@loopback/core/index.d.ts",
-        "./node_modules/@loopback/repository/index.d.ts",
-        "./src/datasources/memorydb.datasource.json",
-        "./node_modules/@types/node/util.d.ts",
-        "./node_modules/@types/node/ts3.2/util.d.ts"
-      ],
       "./src/datasources/cohortesds.datasource.json": [
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
@@ -3911,7 +3893,6 @@
         "./node_modules/@types/node/ts3.2/util.d.ts"
       ],
       "./src/datasources/index.ts": [
-        "./src/datasources/memorydb.datasource.ts",
         "./src/datasources/cohortesds.datasource.ts",
         "./node_modules/@types/node/util.d.ts",
         "./node_modules/@types/node/ts3.2/util.d.ts"
@@ -6575,14 +6556,10 @@
         "./src/models/formulario.model.ts",
         "./src/models/respuesta.model.ts"
       ],
-      "./src/datasources/memorydb.datasource.ts": [
-        "./node_modules/@loopback/repository/index.d.ts"
-      ],
       "./src/datasources/cohortesds.datasource.ts": [
         "./node_modules/@loopback/repository/index.d.ts"
       ],
       "./src/datasources/index.ts": [
-        "./src/datasources/memorydb.datasource.ts",
         "./src/datasources/cohortesds.datasource.ts"
       ],
       "./src/repositories/metacurso.repository.ts": [
@@ -7251,25 +7228,31 @@
       "./src/models/respuesta.model.ts",
       "./src/models/formulario.model.ts",
       "./src/models/index.ts",
-      "./src/datasources/memorydb.datasource.json",
-      "./src/datasources/memorydb.datasource.ts",
       "./src/datasources/cohortesds.datasource.json",
       "./src/datasources/cohortesds.datasource.ts",
+      "./src/controllers/ping.controller.ts",
+      "./node_modules/@types/debug/index.d.ts",
+      "./node_modules/@types/eslint-visitor-keys/index.d.ts",
+      "./node_modules/@types/minimatch/index.d.ts",
+      "./node_modules/@types/glob/index.d.ts",
+      "./node_modules/@types/mocha/index.d.ts",
+      "./node_modules/@types/on-finished/index.d.ts",
+      "./node_modules/@types/type-is/index.d.ts",
       "./src/datasources/index.ts",
-      "./src/repositories/metacurso.repository.ts",
-      "./src/repositories/cursoprogramado.repository.ts",
-      "./src/repositories/horariocurso.repository.ts",
-      "./src/repositories/cursocohorte.repository.ts",
-      "./src/repositories/cohorte.repository.ts",
-      "./src/repositories/contacto.repository.ts",
-      "./src/repositories/materia.repository.ts",
-      "./src/repositories/recurrencia.repository.ts",
-      "./src/repositories/archivo.repository.ts",
-      "./src/repositories/grabacion.repository.ts",
-      "./src/repositories/ocurrencia.repository.ts",
-      "./src/repositories/reunionvideoconferencia.repository.ts",
-      "./src/repositories/respuesta.repository.ts",
       "./src/repositories/formulario.repository.ts",
+      "./src/repositories/respuesta.repository.ts",
+      "./src/repositories/reunionvideoconferencia.repository.ts",
+      "./src/repositories/ocurrencia.repository.ts",
+      "./src/repositories/grabacion.repository.ts",
+      "./src/repositories/archivo.repository.ts",
+      "./src/repositories/recurrencia.repository.ts",
+      "./src/repositories/materia.repository.ts",
+      "./src/repositories/contacto.repository.ts",
+      "./src/repositories/cohorte.repository.ts",
+      "./src/repositories/cursocohorte.repository.ts",
+      "./src/repositories/horariocurso.repository.ts",
+      "./src/repositories/cursoprogramado.repository.ts",
+      "./src/repositories/metacurso.repository.ts",
       "./src/repositories/index.ts",
       "./src/controllers/archivo.controller.ts",
       "./src/controllers/cohorte-cursocohorte.controller.ts",
@@ -7288,7 +7271,6 @@
       "./src/controllers/grabacion-archivo.controller.ts",
       "./src/controllers/grabacion.controller.ts",
       "./src/controllers/horariocurso.controller.ts",
-      "./src/controllers/ping.controller.ts",
       "./src/controllers/materia.controller.ts",
       "./src/controllers/materia-cursoprogramado.controller.ts",
       "./src/controllers/metacurso.controller.ts",
@@ -7301,14 +7283,7 @@
       "./src/controllers/ocurrencia-grabacion.controller.ts",
       "./src/controllers/reunionvideoconferencia-archivo.controller.ts",
       "./src/controllers/respuesta.controller.ts",
-      "./src/controllers/index.ts",
-      "./node_modules/@types/debug/index.d.ts",
-      "./node_modules/@types/eslint-visitor-keys/index.d.ts",
-      "./node_modules/@types/minimatch/index.d.ts",
-      "./node_modules/@types/glob/index.d.ts",
-      "./node_modules/@types/mocha/index.d.ts",
-      "./node_modules/@types/on-finished/index.d.ts",
-      "./node_modules/@types/type-is/index.d.ts"
+      "./src/controllers/index.ts"
     ]
   },
   "version": "3.6.3"
