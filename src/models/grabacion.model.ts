@@ -29,6 +29,12 @@ export class Grabacion extends Entity {
   duracion: number;
 
   @property({
+    type: 'string',
+    limit: 20,
+  })
+  estadodescarga: string;
+
+  @property({
     type: 'number',
   })
   ocurrenciaId: number;

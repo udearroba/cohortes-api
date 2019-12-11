@@ -1314,12 +1314,12 @@
         "signature": "d322f9604fb52f86ce92ee0f52459d6eb741eb1ab186538f698866e51d05be3f"
       },
       "./src/models/archivo.model.ts": {
-        "version": "d7afa7bfa1079863a5bbfc1d4d6dd2846f113b709d12693834206681da504de3",
-        "signature": "5fe0930fd7720c3218a161dc15fbbd959a70a610d182dce84312f7cb83eb0c6e"
+        "version": "ef2930ad0dca0da5c35871555e16f67018761659eb767ae9da6d722672373700",
+        "signature": "1edfc3e1b21c88ba532b60c3d2d789be75d1ac6c61b44cb0ed779ca9946ec27f"
       },
       "./src/models/grabacion.model.ts": {
-        "version": "9b0a873c6a322f4d65f1b0956eb003d9b7eba775e7809904aed6f81c8a91166a",
-        "signature": "096973a6753978228f92136b8bd809a6176190d551b3b3f06d82ceb42ab48ad3"
+        "version": "623f4f3f6eee791147a59500a7a60e724277661d4f077ee2f9e08f51fbf691bb",
+        "signature": "22f9168d6e53ed58fc9cc80266e6cd6e1cc4e42a90ecd69000bc09b0582b0353"
       },
       "./src/models/ocurrencia.model.ts": {
         "version": "6b2c15406c8023b14242a9e798a5c66947378e6b5b82a8e23fd30c5ae9d69791",
@@ -7230,29 +7230,21 @@
       "./src/models/index.ts",
       "./src/datasources/cohortesds.datasource.json",
       "./src/datasources/cohortesds.datasource.ts",
-      "./src/controllers/ping.controller.ts",
-      "./node_modules/@types/debug/index.d.ts",
-      "./node_modules/@types/eslint-visitor-keys/index.d.ts",
-      "./node_modules/@types/minimatch/index.d.ts",
-      "./node_modules/@types/glob/index.d.ts",
-      "./node_modules/@types/mocha/index.d.ts",
-      "./node_modules/@types/on-finished/index.d.ts",
-      "./node_modules/@types/type-is/index.d.ts",
       "./src/datasources/index.ts",
-      "./src/repositories/formulario.repository.ts",
-      "./src/repositories/respuesta.repository.ts",
-      "./src/repositories/reunionvideoconferencia.repository.ts",
-      "./src/repositories/ocurrencia.repository.ts",
-      "./src/repositories/grabacion.repository.ts",
-      "./src/repositories/archivo.repository.ts",
-      "./src/repositories/recurrencia.repository.ts",
-      "./src/repositories/materia.repository.ts",
-      "./src/repositories/contacto.repository.ts",
-      "./src/repositories/cohorte.repository.ts",
-      "./src/repositories/cursocohorte.repository.ts",
-      "./src/repositories/horariocurso.repository.ts",
-      "./src/repositories/cursoprogramado.repository.ts",
       "./src/repositories/metacurso.repository.ts",
+      "./src/repositories/cursoprogramado.repository.ts",
+      "./src/repositories/horariocurso.repository.ts",
+      "./src/repositories/cursocohorte.repository.ts",
+      "./src/repositories/cohorte.repository.ts",
+      "./src/repositories/contacto.repository.ts",
+      "./src/repositories/materia.repository.ts",
+      "./src/repositories/recurrencia.repository.ts",
+      "./src/repositories/archivo.repository.ts",
+      "./src/repositories/grabacion.repository.ts",
+      "./src/repositories/ocurrencia.repository.ts",
+      "./src/repositories/reunionvideoconferencia.repository.ts",
+      "./src/repositories/respuesta.repository.ts",
+      "./src/repositories/formulario.repository.ts",
       "./src/repositories/index.ts",
       "./src/controllers/archivo.controller.ts",
       "./src/controllers/cohorte-cursocohorte.controller.ts",
@@ -7271,6 +7263,7 @@
       "./src/controllers/grabacion-archivo.controller.ts",
       "./src/controllers/grabacion.controller.ts",
       "./src/controllers/horariocurso.controller.ts",
+      "./src/controllers/ping.controller.ts",
       "./src/controllers/materia.controller.ts",
       "./src/controllers/materia-cursoprogramado.controller.ts",
       "./src/controllers/metacurso.controller.ts",
@@ -7283,7 +7276,14 @@
       "./src/controllers/ocurrencia-grabacion.controller.ts",
       "./src/controllers/reunionvideoconferencia-archivo.controller.ts",
       "./src/controllers/respuesta.controller.ts",
-      "./src/controllers/index.ts"
+      "./src/controllers/index.ts",
+      "./node_modules/@types/debug/index.d.ts",
+      "./node_modules/@types/eslint-visitor-keys/index.d.ts",
+      "./node_modules/@types/minimatch/index.d.ts",
+      "./node_modules/@types/glob/index.d.ts",
+      "./node_modules/@types/mocha/index.d.ts",
+      "./node_modules/@types/on-finished/index.d.ts",
+      "./node_modules/@types/type-is/index.d.ts"
     ]
   },
   "version": "3.6.3"

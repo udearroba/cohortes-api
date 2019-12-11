@@ -39,6 +39,12 @@ export class Archivo extends Entity {
   })
   pesobyte: number;
 
+  @property({
+    type: 'string',
+    limit: 20,
+  })
+  estadodescarga: string;
+
   constructor(data?: Partial<Archivo>) {
     super(data);
   }
